@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -31,13 +33,13 @@ public class App
 
 //        Insert Data
 //        Student student = new Student();
-//        student.setId(7);
-//        student.setName("Mrunal Thokor");
-//        student.setCity("Mumbai");
+//        student.setId(3);
+//        student.setName("Dhruvin Palsana");
+//        student.setCity("Ahmedabad");
 //
 //        int result = studentDao.insert(student);
-//
-//        System.out.println(result+"Rows Affected...");
+
+//        System.out.println(result+" Rows Affected...");
 
 //        Update Data
 //        Student student = new Student();
@@ -54,11 +56,19 @@ public class App
 //        System.out.println(result+" Rows Deleted...");
 
 //        Select 1 Row(Object)
-        Student student = studentDao.getStudent(1);
-        System.out.println(student);
-        System.out.println(student.getId());
-        System.out.println(student.getName());
-        System.out.println(student.getCity());
+//        Student student = studentDao.getStudent(1);
+//        System.out.println(student);
+//        System.out.println(student.getId());
+//        System.out.println(student.getName());
+//        System.out.println(student.getCity());
 
+
+//        Select All the Rows(Data)
+        List<Student> students = studentDao.getAllStudents();
+        for(Student student: students){
+            System.out.print(student.getId());
+            System.out.print(" "+student.getName());
+            System.out.println(" "+student.getCity());
+        }
     }
 }

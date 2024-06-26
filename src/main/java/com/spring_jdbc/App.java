@@ -50,9 +50,15 @@ public class App
 
 
 //        Delete Data
-        int result = studentDao.delete(3);
-        System.out.println(result+" Rows Deleted...");
+//        int result = studentDao.delete(3);
+//        System.out.println(result+" Rows Deleted...");
 
+//        Select 1 Row(Object)
+        Student student = studentDao.getStudent(1);
+        System.out.println(student);
+        System.out.println(student.getId());
+        System.out.println(student.getName());
+        System.out.println(student.getCity());
 
     }
 }

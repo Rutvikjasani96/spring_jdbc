@@ -3,8 +3,7 @@ package com.spring_jdbc;
 import com.spring_jdbc.dao.StudentDao;
 import com.spring_jdbc.entites.Student;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.List;
 
@@ -18,7 +17,11 @@ public class App
     {
         System.out.println( "Hello World!" );
 //        Springjdbc -> spring template
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbcconfig.xml");
+    //    using xml
+//        ApplicationContext context = new ClassPathXmlApplicationContext("jdbcconfig.xml");
+    //    using Java Config
+        ApplicationContext context = new AnnotationConfigApplicationContext(Jdbcconfig.class);
+
 //        JdbcTemplate jdbcTemplate = context.getBean("jdbcTemplate", JdbcTemplate.class);
 //
 ////        Insert Query
